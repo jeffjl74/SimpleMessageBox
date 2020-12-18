@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SimpleMessageBox")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("SimpleMessageBoxes")]
+[assembly: AssemblyDescription("Modal and Non-Modal RTF MessageBox")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Jeff Lundblad")]
 [assembly: AssemblyProduct("SimpleMessageBox")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
