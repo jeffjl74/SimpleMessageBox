@@ -126,7 +126,7 @@ namespace DemoApp
         }
 
         /// <summary>
-        /// Modal 3 buttons.
+        /// Non-Modal 3 buttons.
         /// </summary>
         private void buttonAbortRetry_Click(object sender, EventArgs e)
         {
@@ -248,5 +248,61 @@ namespace DemoApp
         }
 
         #endregion MODAL
+
+        /// <summary>
+        /// Copy of the README.md code example to make sure it works.
+        /// </summary>
+        private void buttonReadme_Click(object sender, EventArgs e)
+        {
+            // Equivalent to MessageBox.Show(text, title)
+            SimpleMessageBox.Show("Message is center screen with an [OK] button", "Text/Title - Modal");
+
+            // Center the dialog on the parent
+            SimpleMessageBox.Show(this, "Centered on parent, [OK] button", "Centered - Modal");
+
+            // Position the dialog at the upper left corner of the parent
+            SimpleMessageBox.Show(this.Location, "Positioned with [OK] button", "Placed at location - Modal");
+
+            // Same button, icon, and default button choices as MessageBox
+            DialogResult result = SimpleMessageBox.Show(this,
+                "Yes/No/Cancel centered on parent", "Buttons - Modal",
+                MessageBoxButtons.YesNoCancel, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button3);
+
+            // Use ShowDialog() for non-modal messsages.
+            SimpleMessageBox.ShowDialog(this, "Centered on parent, [OK] button", "Centered - Non-Modal");
+
+            // Pass the event handler to a non-modal dialog
+            SimpleMessageBox.ShowDialog(this,
+                            "Non-modal 3 buttons centered on the parent. Generates an event when a button is pressed.",
+                            "3 Event - Non-Modal",
+                            MessageBoxButtons.AbortRetryIgnore, SMB_ButtonPressed, MessageBoxIcon.Hand);
+
+            // Example of directly setting text groups
+            SimpleMessageBox.ShowDialog(this,
+                              @"plain string (default alignment is centered)"
+                            + @"{\par\b bold}"
+                            + @"{\par\ul underline}"
+                            + @"{{\colortbl;\red0\green0\blue0;\red255\green0\blue0;\red0\green128\blue0;}"
+                            + @"\par\pard\ql left justified {\cf2 red} and {\cf3 green} \par}"
+                            + @"{\fonttbl{\f1\fcharset0 Times New Roman;}}{\f1\fs30 15pt Roman font}"
+                            + @"{\par https://www.google.com/}"
+                            , "Formatted - Non-Modal");
+
+            //
+            // Example using RtfBuilder
+            //
+            RtfBuilder rtf = new RtfBuilder();
+            // underlined title line with a following blank line (\par)
+            rtf.AppendLine(new RtfControl { style = RtfStyle.Underline }, @"Demonstrates RtfBuilder capabilities.\par");
+            // color & alignment
+            rtf.AppendLine(new RtfControl { color = Color.Magenta, alignment = RtfAlign.Left }, "Left aligned magenta");
+            // change the font
+            int halfPts = 24;
+            rtf.AppendLine(new RtfControl { font = "Courier New", halfPts = halfPts }, $"{halfPts / 2}pt Courier font");
+            // convert to string
+            string text = rtf.ToString();
+            SimpleMessageBox.ShowDialog(this, text, "RtfBuilder - Non-Modal",
+                MessageBoxButtons.OK, null, MessageBoxIcon.Information);
+        }
     }
 }

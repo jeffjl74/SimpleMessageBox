@@ -44,6 +44,7 @@
             this.buttonPositioned = new System.Windows.Forms.Button();
             this.buttonXthread = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.buttonReadme = new System.Windows.Forms.Button();
             this.groupBoxNonModal.SuspendLayout();
             this.groupBoxModal.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,7 @@
             this.buttonYesNo.Size = new System.Drawing.Size(75, 23);
             this.buttonYesNo.TabIndex = 0;
             this.buttonYesNo.Text = "Yes/No";
+            this.toolTip1.SetToolTip(this.buttonYesNo, "Call with just the text and title");
             this.buttonYesNo.UseVisualStyleBackColor = true;
             this.buttonYesNo.Click += new System.EventHandler(this.buttonYesNo_Click);
             // 
@@ -65,6 +67,7 @@
             this.buttonBig.Size = new System.Drawing.Size(75, 23);
             this.buttonBig.TabIndex = 1;
             this.buttonBig.Text = "Big";
+            this.toolTip1.SetToolTip(this.buttonBig, "Call with a large amount of text");
             this.buttonBig.UseVisualStyleBackColor = true;
             this.buttonBig.Click += new System.EventHandler(this.buttonBig_Click);
             // 
@@ -75,6 +78,7 @@
             this.buttonFormatted.Size = new System.Drawing.Size(75, 23);
             this.buttonFormatted.TabIndex = 2;
             this.buttonFormatted.Text = "Direct RTF";
+            this.toolTip1.SetToolTip(this.buttonFormatted, "Call with explicit RTF");
             this.buttonFormatted.UseVisualStyleBackColor = true;
             this.buttonFormatted.Click += new System.EventHandler(this.buttonFormatted_Click);
             // 
@@ -85,6 +89,7 @@
             this.buttonCallback.Size = new System.Drawing.Size(75, 23);
             this.buttonCallback.TabIndex = 3;
             this.buttonCallback.Text = "OK Callback";
+            this.toolTip1.SetToolTip(this.buttonCallback, "Placed at the specified location with a button event");
             this.buttonCallback.UseVisualStyleBackColor = true;
             this.buttonCallback.Click += new System.EventHandler(this.buttonCallback_Click);
             // 
@@ -114,6 +119,7 @@
             this.buttonTextTitle.Size = new System.Drawing.Size(75, 23);
             this.buttonTextTitle.TabIndex = 6;
             this.buttonTextTitle.Text = "Text/Title";
+            this.toolTip1.SetToolTip(this.buttonTextTitle, "Call with just the text and title");
             this.buttonTextTitle.UseVisualStyleBackColor = true;
             this.buttonTextTitle.Click += new System.EventHandler(this.buttonTextTitle_Click);
             // 
@@ -124,6 +130,7 @@
             this.buttonYesNoCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonYesNoCancel.TabIndex = 7;
             this.buttonYesNoCancel.Text = "3 Button";
+            this.toolTip1.SetToolTip(this.buttonYesNoCancel, "3 possible button press return values");
             this.buttonYesNoCancel.UseVisualStyleBackColor = true;
             this.buttonYesNoCancel.Click += new System.EventHandler(this.buttonYesNoCancel_Click);
             // 
@@ -134,6 +141,7 @@
             this.buttonAbortRetry.Size = new System.Drawing.Size(75, 23);
             this.buttonAbortRetry.TabIndex = 8;
             this.buttonAbortRetry.Text = "3 Button";
+            this.toolTip1.SetToolTip(this.buttonAbortRetry, "3 button event");
             this.buttonAbortRetry.UseVisualStyleBackColor = true;
             this.buttonAbortRetry.Click += new System.EventHandler(this.buttonAbortRetry_Click);
             // 
@@ -159,7 +167,7 @@
             this.buttonBuilder.Size = new System.Drawing.Size(75, 23);
             this.buttonBuilder.TabIndex = 9;
             this.buttonBuilder.Text = "Rtf Builder";
-            this.toolTip1.SetToolTip(this.buttonBuilder, "Uses the RtfBuilder to merge with to the default rtf document");
+            this.toolTip1.SetToolTip(this.buttonBuilder, "Uses the RtfBuilder to merge text with the default rtf document");
             this.buttonBuilder.UseVisualStyleBackColor = true;
             this.buttonBuilder.Click += new System.EventHandler(this.buttonBuilder_Click);
             // 
@@ -183,6 +191,7 @@
             this.buttonPositioned.Size = new System.Drawing.Size(75, 23);
             this.buttonPositioned.TabIndex = 9;
             this.buttonPositioned.Text = "Positioned";
+            this.toolTip1.SetToolTip(this.buttonPositioned, "Placed at the specified location");
             this.buttonPositioned.UseVisualStyleBackColor = true;
             this.buttonPositioned.Click += new System.EventHandler(this.buttonPositioned_Click);
             // 
@@ -193,14 +202,27 @@
             this.buttonXthread.Size = new System.Drawing.Size(75, 23);
             this.buttonXthread.TabIndex = 8;
             this.buttonXthread.Text = "X Thread";
+            this.toolTip1.SetToolTip(this.buttonXthread, "Call from a separate thread");
             this.buttonXthread.UseVisualStyleBackColor = true;
             this.buttonXthread.Click += new System.EventHandler(this.buttonXthread_Click);
+            // 
+            // buttonReadme
+            // 
+            this.buttonReadme.Location = new System.Drawing.Point(179, 100);
+            this.buttonReadme.Name = "buttonReadme";
+            this.buttonReadme.Size = new System.Drawing.Size(75, 23);
+            this.buttonReadme.TabIndex = 10;
+            this.buttonReadme.Text = "Readme.md";
+            this.toolTip1.SetToolTip(this.buttonReadme, "Tests the README.md examples");
+            this.buttonReadme.UseVisualStyleBackColor = true;
+            this.buttonReadme.Click += new System.EventHandler(this.buttonReadme_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 249);
+            this.Controls.Add(this.buttonReadme);
             this.Controls.Add(this.groupBoxModal);
             this.Controls.Add(this.groupBoxNonModal);
             this.Controls.Add(this.label1);
@@ -232,6 +254,7 @@
         private System.Windows.Forms.Button buttonXthread;
         private System.Windows.Forms.Button buttonPositioned;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button buttonReadme;
     }
 }
 
