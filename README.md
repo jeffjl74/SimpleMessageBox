@@ -6,7 +6,7 @@ Similar to MessageBox.Show() but with
 
  Includes a simple RTF Builder to set font, color and alignment.
 
-![Example](images/formatted.PNG?raw=true)
+![Example](DemoApp/images/formatted.PNG?raw=true)
 
 Non-Modal ShowDialog() versions start their own thread, so they may be called from a non-UI thread that might die before the dialog is dismissed. ShowDialog() versions accept an event handler for a button press event.
 
